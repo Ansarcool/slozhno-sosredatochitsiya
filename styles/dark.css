@@ -17,9 +17,11 @@
     --main-bg-color: #000028;
     --nav-color: #FF0070;
     --title-color: #DB00FF;
+    --text-color: black;
     --rectangle-up: url(../images/Rectangle-up.png);
     --rectangle-bottom: url(../images/Rectangle-bottom.png);
 }
+
 
 .theme-dark .page {
   /* Вам также нужно будет написать ряд подобных селекторов */

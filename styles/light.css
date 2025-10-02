@@ -19,22 +19,32 @@
     --title-color: black;
     --rectangle-up: url(../images/Rectangle-up-light.png);
     --rectangle-bottom: url(../images/Rectangle-bottom-light.png);
-    @media (prefers-color-scheme: light) {
-        :root {
-            /* Дублируем переменные светлой темы */
-            --main-font: 'IBM Plex Mono';
-            --accent-color: #ff8dcb;
-            --main-color: #FFC2E6;
-            --bg-image: url("../images/cover-image-light.png");
-            --font-color: #353430;
-            --main-bg-color: #FFF1F7;
-            --nav-color: black;
-            --title-color: black;
-            --rectangle-up: url(../images/Rectangle-up-light.png);
-            --rectangle-bottom: url(../images/Rectangle-bottom-light.png);
-        }
+}
+@media (prefers-color-scheme: light) {
+    :root {
+        /* Дублируем переменные светлой темы */
+        --main-font: 'IBM Plex Mono';
+        --accent-color: #ff8dcb;
+        --main-color: #FFC2E6;
+        --bg-image: url("../images/cover-image-light.png");
+        --font-color: #353430;
+        --main-bg-color: #FFF1F7;
+        --nav-color: black;
+        --text-color: black;
+        --title-color: black;
+        --rectangle-up: url(../images/Rectangle-up-light.png);
+        --rectangle-bottom: url(../images/Rectangle-bottom-light.png);
+    }
+    .theme-light .decor_block {
+        display: none;
+    }
 }
 
-.theme-light .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+.theme-light .page .page {
+    /* Вам также нужно будет написать ряд подобных селекторов */
 }
+:root.theme-light .decor_block {
+    display: none;
+}
+
+

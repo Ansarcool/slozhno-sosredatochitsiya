@@ -4,6 +4,8 @@
     background-image: var(--bg-image);
     background-attachment: fixed;
     background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
 .header__theme-menu-button {
@@ -24,7 +26,7 @@
     margin-top: 39px;
 }
 .header__theme-menu-button_active {
-    border: 1px solid var(--nav-color);
+    outline: 1px solid var(--nav-color);
     pointer-events: none;
 }
 .hero__title {
@@ -37,15 +39,16 @@
     display: inline-block;
     max-width: 50%;
     justify-self: flex-start;
-    padding-bottom: 55px;
+    margin-bottom: 55px;
 }
 .hero__subtitle {
-    color: var(--main-bg-color);
+    font-family: var(--main-font);
+    color: var(--text-color);
     width: 100%;
-    background-color: var(--main-color);
+    background-color: var(--accent-color);
     font-weight: 700;
     font-size: 18px;
-    grid-row: 3 / 4;
+    grid-row: 4 / 5;
     align-self: start;
     margin-bottom: 66px;
 }
@@ -62,14 +65,22 @@
     align-items: center;
     margin-right: 8px;
     margin-top: 10px;
+    justify-self: flex-end;
+    align-self: self-start;
 }
 .decor-angle-up {
+    width: 25px;
+    height: 25px;
+    background-image: var(--rectangle-up);
     position: absolute;
     z-index: -1;
     right: 10px;
     top: 10px;
 }
 .decor-angle-down {
+    width: 25px;
+    height: 25px;
+    background-image: var(--rectangle-bottom);
     position: absolute;
     z-index: -1;
     bottom: 1%;
@@ -83,17 +94,16 @@ span {
 
 }
 .header__theme-menu {
+    height: 70px;
     grid-column: 1 / 2;
     justify-self: flex-end;
+    align-self: self-end;
     color: var(--nav-color);
-}
-.title-decor {
-    background-color: var(--accent-color);
-    color: var(--font-color);
-    font-family: var(--main-font);
+    margin-bottom: 45px;
 }
 .header {
     width: 100%;
+    height: 100vh;
     padding-right: 10px;
     padding-left: 10px;
     display: grid;
@@ -112,7 +122,7 @@ span {
 }
 h4 , .text {
     background-color: var(--accent-color);
-    color: #000028;
+    color: var(--text-color);
 }
 .abzac {
     padding-top: 9px;
@@ -123,7 +133,7 @@ h4 , .text {
     padding-bottom: 20px;
 }
 h3 {
-    color: var(--title-color);
+    color: var(--accent-color);
     font-weight: 700;
     font-size: 18px;
     font-family: var(--main-font);
@@ -165,6 +175,9 @@ h3 {
     padding-bottom: 10px;
 }
 .angle-up {
+    width: 25px;
+    height: 25px;
+    background-image: var(--rectangle-up);
     grid-column: 3 / 4;
     justify-self: flex-end;
 }
@@ -175,6 +188,9 @@ button {
     font-size: 18px;
 }
 .angle-down {
+    width: 25px;
+    height: 25px;
+    background-image: var(--rectangle-bottom);
     grid-row: 3 / 4;
     align-self: flex-end;
 }
@@ -207,8 +223,8 @@ button {
 }
 @media (min-width: 768px) {
     .header {
-        width: 768px;
-        height: 1024px;
+        width: 100%;
+        height: 100vh;
         padding-right: 20px;
         display: grid;
         grid-template-columns:1fr 1fr 1fr;
@@ -219,7 +235,8 @@ button {
     .hero__subtitle {
         width: 364px;
         grid-column: 3 / 4;
-        align-self: self-end;
+        align-self: self-start;
+        margin: 0;
     }
 
     .header__theme-menu-list {
@@ -231,12 +248,14 @@ button {
         grid-row: 2 / 3;
         grid-column: 1 / 4;
         white-space: nowrap;
-        align-self: center;
+        align-self: self-end;
+        margin: 0;
         font-size: clamp(7.25rem, -0.4375rem + 16.0156vw, 9.8125rem);
     }
     .header__theme-menu {
         grid-column: 3 / 4;
         color: var(--nav-color);
+        margin: 0;
     }
     .decor-block + li {
         margin-top: 146px;
@@ -259,6 +278,9 @@ button {
         align-items: center;
         margin-right: 8px;
         margin-top: 20px;
+        position: absolute;
+        z-index: -1;
+        right: 20px;
     }
     .main {
         padding-top: 60px;
@@ -346,8 +368,8 @@ button {
 
 @media (min-width: 1024px) {
     .header {
-        width: 1024px;
-        height: 768px;
+        width: 100%;
+        height: 100vh;
         padding-right: 20px;
         display: grid;
         grid-template-columns:1fr 1fr 1fr;
@@ -362,14 +384,15 @@ button {
         margin-top: 20px;
         grid-column: 2 / 3;
         grid-row: 1 / 2;
+        align-self: self-start;
+        justify-self: center;
     }
     .hero__title {
         font-size: clamp(7.25rem, 9.8125rem + -4.0039vw, 9.8125rem);
     }
     .decor-block {
-        grid-column: 3 / 4;
-        align-self: self-start;
-        justify-self: flex-end;
+
+
     }
     .hero__subtitle {
         width: 491px;
