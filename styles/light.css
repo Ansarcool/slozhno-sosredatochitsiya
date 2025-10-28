@@ -35,16 +35,12 @@
         --rectangle-up: url(../images/Rectangle-up-light.png);
         --rectangle-bottom: url(../images/Rectangle-bottom-light.png);
     }
-    .theme-light .decor_block {
-        display: none;
-    }
 }
-
+.theme-light .header .header__decor-block {
+    display: none;
+}
 .theme-light .page .page {
     /* Вам также нужно будет написать ряд подобных селекторов */
-}
-:root.theme-light .decor_block {
-    display: none;
 }
 
 

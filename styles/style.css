@@ -8,6 +8,15 @@
     background-repeat: no-repeat;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
+a {
+    text-shadow: 2px 2px 0px rgba(255,0,112,0.61);
+}
+a:hover {
+    text-decoration: underline;
+}
+a:focus {
+    outline: 1px solid var(--font-color)
+}
 .header__theme-menu-button {
     color: var(--nav-color);
     background-color: transparent;
@@ -22,7 +31,7 @@
     text-decoration: underline;
     color: var(--nav-color);
 }
-.decor-block + li  {
+.header__decor-block + li  {
     margin-top: 39px;
 }
 .header__theme-menu-button_active {
@@ -59,7 +68,7 @@
     border-radius: 50%;
     box-shadow: 0 0 4px 2px #FF0070;
 }
-.decor-block {
+.header__decor-block {
     display: flex;
     gap: 10px;
     align-items: center;
@@ -91,7 +100,6 @@ span {
     font-weight: 400;
     font-family: var(--main-font);
     font-size: 18px;
-
 }
 .header__theme-menu {
     height: 70px;
@@ -153,7 +161,7 @@ h3 {
 .title-4 {
     margin-bottom: 10px;
 }
-.section-with-img {
+.section_fourth {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto auto auto;
@@ -165,7 +173,7 @@ h3 {
 
 .footer {
     width: 100%;
-    height: 667px;
+    height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -205,28 +213,19 @@ button {
     justify-self: center;
     align-self: center;
 }
-.section_first {
-    display: grid;
+.section {display: grid;
     grid-template-columns: 1fr
 }
-.section_second {
-    display: grid;
-    grid-template-columns: 1fr
-}
-.section_third {
-    display: grid;
-    grid-template-columns: 1fr
-}
-.section_fourth {
-    display: grid;
-    grid-template-columns: 1fr
+h2 {
+    font-size: clamp(7.25rem, 9.8125rem + -4.0039vw, 9.8125rem);
+    color: var(--main-color);
+    font-weight: 700;
+    font-family: var(--main-font);
+    justify-self: center;
 }
 @media (min-width: 768px) {
     .header {
-        width: 100%;
-        height: 100vh;
         padding-right: 20px;
-        display: grid;
         grid-template-columns:1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
         position: relative;
@@ -257,29 +256,24 @@ button {
         color: var(--nav-color);
         margin: 0;
     }
-    .decor-block + li {
+    .header__decor-block + li {
         margin-top: 146px;
     }
     .decor-angle-up {
-        position: absolute;
-        z-index: -1;
         right: 20px;
         top: 20px;
     }
     .decor-angle-down {
-        position: absolute;
-        z-index: -1;
         bottom: 20px;
         left: 20px;
     }
-    .decor-block {
+    .header__decor-block {
         display: flex;
         gap: 10px;
         align-items: center;
         margin-right: 8px;
         margin-top: 20px;
         position: absolute;
-        z-index: -1;
         right: 20px;
     }
     .main {
@@ -289,7 +283,6 @@ button {
         padding-bottom: 60px;
     }
     .section_first {
-        display: grid;
         grid-template-columns: auto auto;
         grid-template-rows: 1fr 1fr;
     }
@@ -300,7 +293,6 @@ button {
         width: 60%
     }
     .section_second {
-        display: grid;
         grid-template-columns: auto;
         grid-template-rows: auto auto auto auto;
     }
@@ -309,7 +301,6 @@ button {
         width: 30%;
     }
     .section_third {
-        display: grid;
         grid-template-columns: auto auto;
         grid-template-rows:auto auto auto auto auto;
     }
@@ -332,8 +323,7 @@ button {
     .title-3 {
         width: 65%
     }
-    .section-with-img {
-        display: grid;
+    .section_fourth {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto auto auto auto;
         gap: 20px;
@@ -364,12 +354,17 @@ button {
         padding-right: 20px;
         padding-left: 20px;
     }
+    h2 {
+        font-size: clamp(7.25rem, 9.8125rem + -4.0039vw, 9.8125rem);
+        color: var(--main-color);
+        font-weight: 700;
+        font-family: var(--main-font);
+        justify-self: center;
+    }
 }
 
 @media (min-width: 1024px) {
     .header {
-        width: 100%;
-        height: 100vh;
         padding-right: 20px;
         display: grid;
         grid-template-columns:1fr 1fr 1fr;
@@ -389,10 +384,6 @@ button {
     }
     .hero__title {
         font-size: clamp(7.25rem, 9.8125rem + -4.0039vw, 9.8125rem);
-    }
-    .decor-block {
-
-
     }
     .hero__subtitle {
         width: 491px;
